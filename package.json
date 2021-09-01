@@ -1,33 +1,39 @@
 {
-  "name": "confer-conference-event-html-template",
+  "name": "saec",
   "version": "1.0.0",
-  "description": "Confer - Conference Event HTML Template",
-  "main": "index.js",
+  "private": true,
+  "description": "saec",
+  "author": "Gustavo Simões",
+  "keywords": [
+    "gatsby"
+  ],
   "scripts": {
-    "start": "gulp"
-  },
-  "author": "colorlib",
-  "license": "CC-BY-3.0",
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-concat": "^2.6.1"
+    "dev": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1",
-    "counterup": "^1.0.2",
-    "elegant-icons": "0.0.1",
-    "font-awesome": "^4.7.0",
-    "imagesloaded": "^4.1.4",
-    "isotope-layout": "^3.0.6",
-    "jarallax": "^1.10.6",
-    "jquery": "^2.2.4",
-    "jquery-countdown": "^2.2.0",
-    "jquery-waypoints": "^2.0.5",
-    "jquery.easing": "^1.4.1",
-    "magnific-popup": "^1.1.0",
-    "material-design-iconic-font": "^2.2.0",
-    "owl.carousel2": "^2.2.1",
-    "popper.js": "^1.14.5",
-    "wowjs": "^1.1.3"
+    "gatsby": "^3.13.0",
+    "gatsby-plugin-google-analytics": "^3.13.0",
+    "gatsby-plugin-image": "^1.13.0",
+    "gatsby-plugin-manifest": "^3.13.0",
+    "gatsby-plugin-react-helmet": "^4.13.0",
+    "gatsby-plugin-sass": "^4.13.0",
+    "gatsby-plugin-sharp": "^3.13.0",
+    "gatsby-plugin-sitemap": "^4.9.0",
+    "gatsby-source-filesystem": "^3.13.0",
+    "gatsby-transformer-sharp": "^3.13.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "react-typing-effect": "^2.0.5",
+    "sass": "^1.38.2"
+  },
+  "devDependencies": {
+    "@types/node": "^16.7.10",
+    "@types/react": "^17.0.19",
+    "@types/react-dom": "^17.0.9"
   }
 }
