@@ -25,6 +25,12 @@ module.exports = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
+        name: `SAEC UFSC`,
+        short_name: `SAEC`,
+        start_url: `/`,
+        background_color: `#3f00f2`,
+        theme_color: `#3f00f2`,
+        display: `standalone`,
         icon: "src/images/icon.png",
       },
     },

@@ -17,7 +17,7 @@ var plugins = [{
     },{
       name: 'gatsby-plugin-manifest',
       plugin: require('/Users/gustavo/Documents/dev/code/ufsc/public_html/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
-      options: {"plugins":[],"icon":"src/images/icon.png","legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":"53aa06cf17e4239d0dba6ffd09854e02"},
+      options: {"plugins":[],"name":"SAEC UFSC","short_name":"SAEC","start_url":"/","background_color":"#3f00f2","theme_color":"#3f00f2","display":"standalone","icon":"src/images/icon.png","legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":"333c6d776c81693669434399d80c0714"},
     }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
