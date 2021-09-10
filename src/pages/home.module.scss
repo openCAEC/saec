@@ -1,0 +1,39 @@
+.main {
+  color: #fff;
+
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+
+  a {
+    font-weight: 300;
+    color: #fff;
+  }
+
+  .logo {
+    margin-bottom: 4em;
+    width: 80%;
+    max-width: 400px;
+  }
+
+  .socialMedia {
+    h3 {
+      font-weight: 200;
+      font-size: 2em;
+    }
+    h1 {
+      font-size: 3em;
+      margin: 0.05em;
+    }
+  }
+}
+.tag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+}
