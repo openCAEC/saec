@@ -47,10 +47,6 @@
   }
 }
 
-body {
-  background: #3f00f2;
-}
-
 body,
 input,
 textarea,
@@ -82,4 +78,34 @@ p {
 
 button {
   cursor: pointer;
+}
+
+.grafite {
+  background: #1d1d1e !important;
+}
+
+.btn-neo {
+  background: radial-gradient(
+    187.5% 187.5% at 50.29% -54.17%,
+    #ed3148 0%,
+    #3f00f2 100%
+  );
+  box-shadow: 0px 3px 56px 9px #2c00a8,
+    -1px -1px 42px -7px rgba(237, 49, 72, 0.4);
+}
+
+.btn-neo:hover,
+.btn-neo:focus {
+  background: radial-gradient(
+    187.5% 187.5% at 50.29% -54.17%,
+    #ed3148 0%,
+    #3f00f2 100%
+  );
+  box-shadow: 0px 3px 56px 9px #3300be,
+    -1px -1px 42px -7px rgba(237, 49, 71, 0.596);
+}
+.btn-neo:active,
+.btn-neo.active {
+  background-color: #3300be;
+  border-color: #3300be;
 }
