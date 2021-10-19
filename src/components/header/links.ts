@@ -11,7 +11,7 @@ export const links: Array<Link> = [
   {
     id: "home",
     path: "/",
-    name: "saecthon",
+    name: "Início",
     icon: "home",
   },
 
@@ -22,17 +22,17 @@ export const links: Array<Link> = [
     icon: "sports_esports",
   },
   {
-    id: "signin",
-    path: "/signin",
+    id: "entrar",
+    path: "/entrar",
     name: "Entrar",
     icon: "login",
   },
   {
-    id: "signup",
-    path: "/signup",
+    id: "inscricao",
+    path: "/inscricao",
     name: "Inscreva-se",
     icon: "person_add",
-    className: "signupButton",
+    disableCase: ["desktop"],
   },
   {
     id: "contato",

@@ -16,12 +16,11 @@
   --gray-800: #494d4b;
   --gray-900: #303030;
 
-  --green-500: #04d361;
+  --aroxo: #3f00f2;
+  --branco-branco: #fff;
 
-  --purple-300: #9f75ff;
-  --purple-400: #9164fa;
-  --purple-500: #8257e5;
-  --purple-800: #6f48c9;
+  --vermelho-tomate: #ed3148;
+  --amarelo-ovo: #fbf600;
 }
 
 /*
@@ -48,7 +47,7 @@
 }
 
 body {
-  background: #3f00f2;
+  background: var(--gray-50);
 }
 
 body,
