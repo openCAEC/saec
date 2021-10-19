@@ -4,6 +4,14 @@ import Drawer from "@material-ui/core/Drawer";
 
 import * as styles from "./header.module.scss";
 import { links } from "./links";
+import {
+  Icon,
+  List,
+  ListItem,
+  ListItemIcon,
+  ListItemText,
+  Button,
+} from "@material-ui/core";
 
 const HeaderComponent = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
@@ -11,26 +19,6 @@ const HeaderComponent = () => {
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
-
-  function getLinks() {
-    return links.map((link) => {
-      if (!link.disableCase || !link.disableCase.includes("desktop")) {
-        return (
-          <Link
-            key={link.id}
-            to={link.path}
-            className={
-              link.className
-                ? `${styles.link} ${styles[link.className]}`
-                : styles.link
-            }
-          >
-            {link.name}
-          </Link>
-        );
-      }
-    });
-  }
 
   return (
     <header className={styles.header}>
@@ -41,10 +29,41 @@ const HeaderComponent = () => {
         open={isDrawerOpen}
         onClose={() => toggleDrawer()}
       >
-        {getLinks()}
+        <List>
+          {links.map((link) => {
+            if (!link.disableCase || !link.disableCase.includes("desktop")) {
+              return (
+                <Link key={link.id} to={link.path}>
+                  <ListItem button>
+                    <ListItemIcon>{<Icon>{link.icon}</Icon>}</ListItemIcon>
+                    <ListItemText primary={link.name} />
+                  </ListItem>
+                </Link>
+              );
+            }
+          })}
+        </List>
       </Drawer>
 
-      <nav>{getLinks()}</nav>
+      <nav>
+        {links.map((link) => {
+          if (!link.disableCase || !link.disableCase.includes("desktop")) {
+            return (
+              <Link
+                key={link.id}
+                to={link.path}
+                className={
+                  link.className
+                    ? `${styles.link} ${styles[link.className]}`
+                    : styles.link
+                }
+              >
+                {link.name}
+              </Link>
+            );
+          }
+        })}
+      </nav>
     </header>
   );
 };
