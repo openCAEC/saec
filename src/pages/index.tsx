@@ -1,4 +1,6 @@
 import * as React from "react";
+// @ts-ignore
+// Ignorar erro de importação de módulo scss pelo ts
 import * as styles from "./home.module.scss";
 import { Helmet } from "react-helmet";
 import HeaderComponent from "../components/header";
@@ -15,7 +17,7 @@ const IndexPage = () => {
         />
       </Helmet>
       <HeaderComponent />
-      <h3 className={styles.tag}>Em breve!</h3>
+
       <main className={styles.main}>
         <title>SAEC 2021 | Em contrução</title>
 

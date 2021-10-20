@@ -1,7 +1,8 @@
 import { Link } from "gatsby";
 import * as React from "react";
 import Drawer from "@material-ui/core/Drawer";
-
+// @ts-ignore
+// Ignorar erro de importação de módulo scss pelo ts
 import * as styles from "./header.module.scss";
 
 import { links } from "./links";
@@ -99,10 +100,9 @@ const HeaderComponent = () => {
             );
           }
         })}
-
-        <SignupButton component={Link} to="/inscricao">
-          Inscreva-se
-        </SignupButton>
+        <Link to="/inscricao" style={{ textDecoration: "none" }}>
+          <SignupButton>Inscreva-se</SignupButton>
+        </Link>
       </nav>
     </header>
   );

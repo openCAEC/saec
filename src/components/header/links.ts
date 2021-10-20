@@ -17,7 +17,7 @@ export const links: Array<Link> = [
 
   {
     id: "saecgameday",
-    path: "/saecgameday",
+    path: "/gameday",
     name: "saecgameday",
     icon: "sports_esports",
   },
