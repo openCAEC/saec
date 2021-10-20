@@ -1,0 +1,145 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  max-width: 100%;
+
+  .header {
+    display: flex;
+    justify-content: left;
+    padding-left: 0px;
+    align-items: center;
+    min-height: 180px;
+    background-color: var(--aroxo);
+    color: var(--branco-branco);
+    padding-left: 150px;
+  }
+
+  p {
+    padding-top: 15px;
+  }
+
+  h5 {
+    font-size: 25px;
+  }
+
+  .contactInfo {
+    display: flex;
+    padding-top: 50px;
+    padding-left: 150px;
+  }
+
+  .text {
+    padding-top: 10px;
+    padding-bottom: 15px;
+    font-size: 16px;
+    max-width: 90%;
+  }
+  .email > p {
+    max-width: 80%;
+    padding-bottom: 10px;
+  }
+  .telephone {
+    margin-right: 30px;
+  }
+
+  .telephone p {
+    padding-bottom: 10px;
+  }
+
+  hr {
+    display: flex;
+    justify-self: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-right: 150px;
+    margin-left: 150px;
+    border-top: 2px solid #000;
+    border-radius: 5px;
+  }
+
+  .followSaec {
+    display: flex;
+    padding-left: 150px;
+  }
+
+  .complaint {
+    display: flex;
+    padding-left: 150px;
+  }
+
+  .complaint p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+
+  .sugestions {
+    display: flex;
+    padding-left: 150px;
+  }
+}
+
+@media only screen and (max-width: 876px) {
+  .contactInfo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .telephone {
+    padding-top: 30px;
+  }
+}
+
+@media only screen and (max-width: 754px) {
+  .header {
+    padding-left: 75px;
+  }
+  .contactInfo {
+    padding-left: 75px;
+  }
+
+  .followSaec {
+    padding-left: 75px;
+  }
+  .complaint {
+    padding-left: 75px;
+  }
+  .sugestions {
+    padding-left: 75px;
+  }
+
+  hr {
+    margin-left: 75px;
+    margin-right: 75px;
+  }
+}
+
+@media only screen and (max-width: 536px) {
+  .header {
+    padding-left: 35px;
+  }
+
+  .contactInfo {
+    padding-left: 35px;
+  }
+
+  .followSaec {
+    padding-left: 35px;
+  }
+  .content p {
+    max-width: 85vw;
+  }
+
+  .complaint {
+    padding-left: 35px;
+  }
+
+  .sugestions {
+    padding-left: 35px;
+  }
+
+  hr {
+    margin-left: 35px;
+    margin-right: 35px;
+  }
+}
