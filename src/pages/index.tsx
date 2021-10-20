@@ -1,6 +1,8 @@
 import * as React from "react";
 import * as styles from "./home.module.scss";
 import { Helmet } from "react-helmet";
+import AbouSaec from "../components/AboutSaec/about";
+import ContactPage from "../components/contact/contact";
 
 const IndexPage = () => {
   return (
@@ -24,6 +26,8 @@ const IndexPage = () => {
           <h1>/saecufscara</h1>
         </div>
       </main>
+      <AbouSaec></AbouSaec>
+      <ContactPage></ContactPage>
     </>
   );
 };
