@@ -20,10 +20,26 @@ import {
 
 const HeaderComponent = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [scrollPosition, setScrollPosition] = React.useState(0);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
+
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+
+    console.log("Position: ", position, " State: ", scrollPosition);
+  };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const SignupButton = styled(Button)<ButtonProps>(({ theme }) => ({
     color: "white",
@@ -38,7 +54,9 @@ const HeaderComponent = () => {
   }));
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${scrollPosition > 0 ? styles.shadow : ""}`}
+    >
       <div className={styles.mobileButton}>
         <IconButton
           onClick={() => toggleDrawer()}
