@@ -1,0 +1,12 @@
+.container {
+  gap: 0.6rem;
+
+  .item {
+    max-width: 2rem;
+
+    img {
+      width: 100%;
+      border-radius: 100%;
+    }
+  }
+}
