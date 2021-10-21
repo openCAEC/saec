@@ -21,6 +21,7 @@
 
   --vermelho-tomate: #ed3148;
   --amarelo-ovo: #fbf600;
+  --grafite-chique: #3a3a3d;
 }
 
 /*
@@ -48,6 +49,7 @@
 
 body {
   background: var(--gray-50);
+  color: var(--grafite-chique);
 }
 
 body,
@@ -79,6 +81,32 @@ p {
   font: 500 1rem "Ubunto", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 button {
   cursor: pointer;
+}
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.x {
+    flex-direction: row;
+  }
+
+  &.y {
+    flex-direction: column;
+  }
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.space-around {
+    justify-content: space-around;
+  }
 }

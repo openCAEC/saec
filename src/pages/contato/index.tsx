@@ -3,8 +3,13 @@ import * as React from "react";
 // Ignorar erro de importação de módulo scss pelo ts
 import * as styles from "./contato.module.scss";
 
-import HeaderComponent from "../../components/header";
 import SEO from "../../components/SEO";
+
+const LinkIcon = () => (
+  <svg viewBox="0 0 24 24">
+    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"></path>
+  </svg>
+);
 
 const ContatoPage = () => {
   return (
@@ -14,34 +19,62 @@ const ContatoPage = () => {
         description="Entre em contato com a equipe da SAEC UFSC 2021"
       />
 
-      <HeaderComponent />
+      <section className={styles.contactHeader}>
+        <h1>Vamos conversar?</h1>
+      </section>
 
       <main className={styles.main}>
-        <header className={styles.header}>
-          <h1>Como você prefere falar com a gente?</h1>
-        </header>
-
-        <div className={styles.contactInfo}>
-          <div className={styles.email}>
-            <h5>E-mail</h5>
+        <div className={`${styles.box} box x center`}>
+          <div className={styles.boxItem}>
+            <h3>E-mail</h3>
             <p>
               Tem alguma dúvida podemos te ajudar pelo nosso canal de e-mail.
             </p>
-            <a>email</a>
+            <div className={styles.link}>
+              <a target="_blank" href="mailto:saecufscara@gmail.com">
+                saecufscara@gmail.com
+                <LinkIcon />
+              </a>
+            </div>
           </div>
 
-          <div className={styles.telephone}>
-            <h5>Telefone</h5>
-            <p>Você pode ligar no 0800 da SAEC....ou não.</p>
-            <a>Telefone</a>
+          <div className={styles.boxItem}>
+            <h3>WhatsApp</h3>
+            <p>
+              Vem de zap SAEC! Entre em contato com a equipe do SAEC por meio do
+              perfil oficial da SAEC no WhatsApp.
+            </p>
+            <div className={styles.link}>
+              <a
+                className={styles.link}
+                target="_blank"
+                href="https://api.whatsapp.com/send?phone=554833633522&text=Ol%C3%A1%20equipe%20SAEC%2C%20tudo%20bem%3F"
+              >
+                +55 (19) 3363-3522
+                <LinkIcon />
+              </a>
+            </div>
+          </div>
+          <div className={styles.boxItem}>
+            <h3>Discord</h3>
+            <p>
+              A edição 2021 da SAEC conta com um servidor no Discord. Encontre a
+              equipe de Staffs da SAEC nos canais de suporte!{" "}
+            </p>
+            <div className={styles.link}>
+              <a className={styles.link} target="_blank" href="">
+                Comunidade no Discord
+                <LinkIcon />
+              </a>
+            </div>
           </div>
         </div>
 
         <hr className={styles.divider}></hr>
 
-        <div className={styles.followSaec}>
+        <div className={styles.itemUno}>
           <div className={styles.content}>
-            <h5>Siga o @saecufscara</h5>
+            <h3>Siga o @saecufscara</h3>
             <p>
               Lorem Ipsum is simply dummy text of the printing and typesetting
               industry.
@@ -52,24 +85,48 @@ const ContatoPage = () => {
 
         <hr className={styles.divider}></hr>
 
-        <div className={styles.complaint}>
+        <div className={styles.itemUno}>
           <div className={styles.text}>
-            <h2>Canal de denúncia</h2>
-            <p>Sem tempo irmão, denuncia o loco </p>
-            <a>Link para o forms</a>
+            <h3>Canal de denúncia</h3>
+            <p>
+              Viu alguma atitude negativa durante a SAEC ou algo que aconteceu
+              te atingiu ou atingiu alguém ao seu redor? Não se cale! Formalize
+              uma denuncia para a equipe de coordenação da SAEC.
+            </p>
+            <div className={styles.link}>
+              <a
+                className={styles.link}
+                target="_blank"
+                href="https://forms.gle/Q44sNt3AFf9dYQZ26"
+              >
+                Formulário de denúncias
+                <LinkIcon />
+              </a>
+            </div>
           </div>
         </div>
 
         <hr className={styles.divider}></hr>
 
-        <div className={styles.sugestions}>
+        <div className={styles.itemUno}>
           <div className={styles.text}>
-            <h5>Críticas e sugestões</h5>
+            <h3>Críticas e sugestões</h3>
             <p className={styles.text}>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
+              Deseja fazer algum comentário para a equipe da SAEC ou passar
+              algum feedback? Ou então contar para nós um pouco da sua
+              experiência no evento? Quem sabe apenas dar um biscoito pra equipe
+              organizadora da SAEC 2021?!
             </p>
-            <a>Link para o forms</a>
+            <div className={styles.link}>
+              <a
+                className={styles.link}
+                target="_blank"
+                href="https://forms.gle/ALKrmNNX4fYZVMfn9"
+              >
+                Formulário críticas e sugestões
+                <LinkIcon />
+              </a>
+            </div>
           </div>
         </div>
       </main>
