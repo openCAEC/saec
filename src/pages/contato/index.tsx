@@ -73,7 +73,7 @@ const ContatoPage = () => {
 
         <hr className={styles.divider}></hr>
 
-        <div className={styles.itemUno}>
+        <div className={styles.boxItem}>
           <div className={styles.content}>
             <h3>
               Siga <span className="color aroxo">@saecufscara</span> nas redes!
@@ -88,7 +88,7 @@ const ContatoPage = () => {
 
         <hr className={styles.divider}></hr>
 
-        <div className={styles.itemUno}>
+        <div className={styles.boxItem}>
           <div className={styles.text}>
             <h3>Canal de denúncia</h3>
             <p>
@@ -111,7 +111,7 @@ const ContatoPage = () => {
 
         <hr className={styles.divider}></hr>
 
-        <div className={styles.itemUno}>
+        <div className={styles.boxItem}>
           <div className={styles.text}>
             <h3>Críticas e sugestões</h3>
             <p className={styles.text}>
