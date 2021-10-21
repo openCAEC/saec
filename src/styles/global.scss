@@ -110,3 +110,9 @@ button {
     justify-content: space-around;
   }
 }
+
+.color {
+  &.aroxo {
+    color: var(--aroxo);
+  }
+}

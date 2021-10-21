@@ -4,6 +4,7 @@ import * as React from "react";
 import * as styles from "./contato.module.scss";
 
 import SEO from "../../components/SEO";
+import SocialMediaComponent from "../../components/socialMedia";
 
 const LinkIcon = () => (
   <svg viewBox="0 0 24 24">
@@ -74,12 +75,14 @@ const ContatoPage = () => {
 
         <div className={styles.itemUno}>
           <div className={styles.content}>
-            <h3>Siga o @saecufscara</h3>
-            <p>
-              Lorem Ipsum is simply dummy text of the printing and typesetting
-              industry.
-            </p>
-            <div className={styles.socialIconsWrapper}></div>
+            <h3>
+              Siga <span className="color aroxo">@saecufscara</span> nas redes!
+            </h3>
+
+            <p>A SAEC está em todas! Siga-nos nas redes sociais.</p>
+            <div className={styles.socialMediaContainer}>
+              <SocialMediaComponent />
+            </div>
           </div>
         </div>
 
