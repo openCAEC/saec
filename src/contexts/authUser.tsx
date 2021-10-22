@@ -50,4 +50,4 @@ class AuthUserProvider extends React.Component {
   }
 }
 export default AuthUserContext;
-export { AuthUserProvider };
+export {  AuthUserProvider };
