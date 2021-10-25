@@ -1,10 +1,6 @@
 import React from "react";
-import { firebaseApp } from "../services/initFirebase";
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-
-const defaultState = {
-  authUser: null,
-};
+import { auth } from "../services/initFirebase";
+import { onAuthStateChanged } from "firebase/auth";
 
 const AuthUserLogStyles = [
   `background: rebeccapurple`,
@@ -14,15 +10,17 @@ const AuthUserLogStyles = [
   `padding: 2px 0.5em`,
 ].join(`;`);
 
-const AuthUserContext = React.createContext(defaultState);
+const defaultState = {
+  authUser: null,
+};
 
+const AuthUserContext = React.createContext(defaultState);
 class AuthUserProvider extends React.Component {
   state = {
     authUser: null,
   };
 
   componentDidMount() {
-    const auth = getAuth(firebaseApp);
     onAuthStateChanged(auth, (user) => {
       if (user) {
         this.setState({ authUser: user });
@@ -50,4 +48,4 @@ class AuthUserProvider extends React.Component {
   }
 }
 export default AuthUserContext;
-export {  AuthUserProvider };
+export { AuthUserProvider };

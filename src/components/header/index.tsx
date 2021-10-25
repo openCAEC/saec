@@ -1,14 +1,14 @@
 import { Link } from "gatsby";
 import * as React from "react";
-import Drawer from "@material-ui/core/Drawer";
+import Drawer from "@mui/material/Drawer";
 // @ts-ignore
 // Ignorar erro de importação de módulo scss pelo ts
 import * as styles from "./header.module.scss";
 
 import { links } from "./links";
 
-import { styled } from "@material-ui/core/styles";
-import Button, { ButtonProps } from "@material-ui/core/Button";
+import { styled } from "@mui/material/styles";
+import Button, { ButtonProps } from "@mui/material/Button";
 import {
   Icon,
   List,
@@ -16,7 +16,7 @@ import {
   ListItemIcon,
   ListItemText,
   IconButton,
-} from "@material-ui/core";
+} from "@mui/material";
 
 const HeaderComponent = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);

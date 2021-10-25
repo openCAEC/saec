@@ -7,7 +7,7 @@ const PrivateRoute = ({ component: Component, path, ...rest }) => {
   const { authUser } = React.useContext(AuthUserContext);
   const curentUrl = encodeURIComponent(window.location.href);
   if (!authUser) {
-    navigate(`/login?${curentUrl}`);
+    navigate(`/login?redirect=${curentUrl}`);
     return null;
   }
 
