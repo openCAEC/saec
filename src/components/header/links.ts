@@ -23,7 +23,7 @@ export const links: Array<Link> = [
   },
   {
     id: "entrar",
-    path: "/entrar",
+    path: "/login",
     name: "Entrar",
     icon: "login",
   },

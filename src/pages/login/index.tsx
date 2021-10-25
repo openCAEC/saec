@@ -5,25 +5,18 @@ import * as styles from "./login.module.scss";
 
 import SEO from "../../components/SEO";
 import AuthComponent from "../../components/auth";
-import { allowedUrls } from "./allowed_callback_urls";
+
 import AuthUserContext from "../../contexts/authUser";
-import {
-  Dialog,
-  DialogContent,
-  DialogContentText,
-  DialogTitle,
-} from "@mui/material";
+
 import { navigate } from "gatsby";
 
 const EntrarPage = (props) => {
-  const [open, setOpen] = React.useState(false);
-  const [redirectUrlOrigin, setRedirectUrlOrigin] = React.useState("");
-
+  const [navigatePathUrl, setNavigatePathUrl] = React.useState("");
   const { authUser } = React.useContext(AuthUserContext);
 
   if (authUser) {
-    if (allowedUrls.includes(redirectUrlOrigin)) {
-      navigate(redirectUrlOrigin);
+    if (navigatePathUrl != "") {
+      navigate(navigatePathUrl);
     } else {
       navigate("/app");
     }
@@ -31,26 +24,17 @@ const EntrarPage = (props) => {
 
   React.useEffect(() => {
     const params = new URLSearchParams(props.location.search);
-    const redirectUrl = params.get("redirect");
+    const navigatePathUrlParam = params.get("navigate");
+    const decodedNavigatePathUrlParam =
+      decodeURIComponent(navigatePathUrlParam);
 
-    if (redirectUrl) {
-      try {
-        const urlOrigin = new URL(redirectUrl).origin;
+    setNavigatePathUrl(decodedNavigatePathUrlParam);
 
-        setRedirectUrlOrigin(urlOrigin);
-
-        if (!allowedUrls.includes(urlOrigin)) {
-          setOpen(true);
-          return;
-        }
-
-        if (authUser) {
-          navigate(redirectUrl);
-        }
-
-        console.log(redirectUrl, urlOrigin, allowedUrls.includes(urlOrigin));
-      } catch (err) {
-        console.error(err);
+    if (authUser) {
+      if (navigatePathUrl != "") {
+        navigate(navigatePathUrl);
+      } else {
+        navigate("/app");
       }
     }
   }, []);
@@ -64,21 +48,6 @@ const EntrarPage = (props) => {
 
       <main>
         <AuthComponent />
-        <Dialog
-          open={open}
-          aria-labelledby="alert-dialog-title"
-          aria-describedby="alert-dialog-description"
-        >
-          <DialogTitle id="alert-dialog-title">
-            Domínio não autorizado
-          </DialogTitle>
-          <DialogContent>
-            <DialogContentText id="alert-dialog-description">
-              O domínio {redirectUrlOrigin} não é autorizado pela equipe da
-              SAEC.
-            </DialogContentText>
-          </DialogContent>
-        </Dialog>
       </main>
     </>
   );
