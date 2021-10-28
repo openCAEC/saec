@@ -1,0 +1,13 @@
+.button {
+  width: 100%;
+  padding: 0.5rem 0 !important;
+  justify-content: space-around !important;
+
+  img {
+    width: 1.4rem;
+  }
+
+  &:hover {
+    filter: contrast(150%);
+  }
+}

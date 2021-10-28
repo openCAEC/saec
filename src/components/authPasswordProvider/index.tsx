@@ -13,6 +13,10 @@ import LoadingButton from "@mui/lab/LoadingButton";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../services/initFirebase";
 
+// @ts-ignore
+// Ignorar erro de importação de módulo scss pelo ts
+import * as styles from "./authPasswordProvider.module.scss";
+
 type ErrorMessage = {
   default: string | null;
   email: string | null;
@@ -137,8 +141,8 @@ const AuthComponent = (props) => {
     return !!(values.email && values.password && values.password.length >= 6);
   };
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
-      <FormControl sx={{ m: 1, width: "30ch" }} variant="outlined">
+    <form onSubmit={(e) => handleSubmit(e)} className={styles.form}>
+      <FormControl sx={{ m: 1, width: "100%" }} variant="outlined">
         <InputLabel error={values.errorMessage.email != null} htmlFor="email">
           Email
         </InputLabel>
@@ -157,7 +161,7 @@ const AuthComponent = (props) => {
         )}
       </FormControl>
 
-      <FormControl sx={{ m: 1, width: "30ch" }} variant="outlined">
+      <FormControl sx={{ m: 1, width: "100%" }} variant="outlined">
         <InputLabel error={!!values.errorMessage.password} htmlFor="password">
           Senha
         </InputLabel>
@@ -196,6 +200,7 @@ const AuthComponent = (props) => {
         type="submit"
         loading={values.isLoading}
         variant="outlined"
+        className={styles.submitButton}
       >
         Entrar
       </LoadingButton>

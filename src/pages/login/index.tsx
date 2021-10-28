@@ -4,21 +4,26 @@ import * as React from "react";
 import * as styles from "./login.module.scss";
 
 import SEO from "../../components/SEO";
-import AuthComponent from "../../components/auth";
+import AuthComponent from "../../components/authPasswordProvider";
 
 import AuthUserContext from "../../contexts/authUser";
 
 import { navigate } from "gatsby";
+import AuthButton from "../../components/authButton";
 
 const EntrarPage = (props) => {
-  const [navigatePathUrl, setNavigatePathUrl] = React.useState("");
+  const [navigatePathUrl, setNavigatePathUrl] = React.useState(
+    null as null | string
+  );
   const { authUser } = React.useContext(AuthUserContext);
 
   if (authUser) {
-    if (navigatePathUrl != "") {
+    if (navigatePathUrl) {
       navigate(navigatePathUrl);
+      return null;
     } else {
       navigate("/app");
+      return null;
     }
   }
 
@@ -29,15 +34,11 @@ const EntrarPage = (props) => {
       decodeURIComponent(navigatePathUrlParam);
 
     setNavigatePathUrl(decodedNavigatePathUrlParam);
-
-    if (authUser) {
-      if (navigatePathUrl != "") {
-        navigate(navigatePathUrl);
-      } else {
-        navigate("/app");
-      }
-    }
   }, []);
+
+  function handleClick(provider) {
+    console.log("Provider: ", provider);
+  }
 
   return (
     <>
@@ -48,6 +49,13 @@ const EntrarPage = (props) => {
 
       <main>
         <AuthComponent />
+        <AuthButton
+          id="github"
+          title="Github"
+          iconPath="/social/github.svg"
+          backgroundColor="#1B1817"
+          onClick={handleClick("github")}
+        />
       </main>
     </>
   );
