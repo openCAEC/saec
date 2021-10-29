@@ -9,7 +9,7 @@
 
 @media (min-width: 720px) {
   .desktop {
-    display: block;
+    display: flex;
   }
   .mobileButton {
     display: none;
@@ -34,8 +34,24 @@
   }
 
   .desktop {
-    padding: 1rem;
+    padding: 0.8rem;
     text-align: center;
+
+    align-items: center;
+    justify-content: center;
+
+    .logoContainer {
+      max-width: 6rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .profileImg {
+      width: 2rem;
+      height: 2rem;
+    }
 
     .link {
       text-decoration: none;

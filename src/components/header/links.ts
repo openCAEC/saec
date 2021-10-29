@@ -16,29 +16,43 @@ export const links: Array<Link> = [
   },
 
   {
-    id: "saecgameday",
+    id: "Saecgameday",
     path: "/gameday",
     name: "saecgameday",
     icon: "sports_esports",
-  },
-  {
-    id: "entrar",
-    path: "/login",
-    name: "Entrar",
-    icon: "login",
-  },
-  {
-    id: "inscricao",
-    path: "/inscricao",
-    name: "Inscreva-se",
-    icon: "person_add",
-    disableCase: ["desktop"],
   },
   {
     id: "contato",
     path: "/contato",
     name: "Contato",
     icon: "alternate_email",
-    disableCase: ["desktop"],
+  },
+  {
+    id: "entrar",
+    path: "/login",
+    name: "Entrar",
+    icon: "login",
+    disableCase: ["isAuth"],
+  },
+  {
+    id: "inscricao",
+    path: "/inscricao",
+    name: "Inscreva-se",
+    icon: "person_add",
+    disableCase: ["desktop", "isAuth"],
+  },
+  {
+    id: "app",
+    path: "/app",
+    name: "SAEC APP",
+    icon: "apps",
+    disableCase: ["desktop", "isNotAuth"],
+  },
+  {
+    id: "logout",
+    path: "/logout",
+    name: "Sair",
+    icon: "logout",
+    disableCase: ["desktop", "isNotAuth"],
   },
 ];
