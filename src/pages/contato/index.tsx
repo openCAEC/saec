@@ -63,7 +63,7 @@ const ContatoPage = () => {
               equipe de Staffs da SAEC nos canais de suporte!{" "}
             </p>
             <div className={styles.link}>
-              <a className={styles.link} target="_blank" href="">
+              <a className={styles.link} target="_blank" href="/app/discord">
                 Comunidade no Discord
                 <LinkIcon />
               </a>
@@ -71,10 +71,10 @@ const ContatoPage = () => {
           </div>
         </div>
 
-        <hr className={styles.divider}></hr>
+        <hr></hr>
 
         <div className={styles.boxItem}>
-          <div className={styles.content}>
+          <div>
             <h3>
               Siga <span className="color aroxo">@saecufscara</span> nas redes!
             </h3>
@@ -86,10 +86,10 @@ const ContatoPage = () => {
           </div>
         </div>
 
-        <hr className={styles.divider}></hr>
+        <hr></hr>
 
         <div className={styles.boxItem}>
-          <div className={styles.text}>
+          <div>
             <h3>Canal de denúncia</h3>
             <p>
               Viu alguma atitude negativa durante a SAEC ou algo que aconteceu
@@ -109,12 +109,12 @@ const ContatoPage = () => {
           </div>
         </div>
 
-        <hr className={styles.divider}></hr>
+        <hr></hr>
 
         <div className={styles.boxItem}>
-          <div className={styles.text}>
+          <div>
             <h3>Críticas e sugestões</h3>
-            <p className={styles.text}>
+            <p>
               Deseja fazer algum comentário para a equipe da SAEC ou passar
               algum feedback? Ou então contar para nós um pouco da sua
               experiência no evento? Quem sabe apenas dar um biscoito pra equipe

@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 
 // @ts-ignore
 // Ignorar erro de importação de módulo scss pelo ts
-import * as styles from "./countdown.module.scss";
+// import * as styles from "./countdown.module.scss";
 
 const CountdownComponent = () => {
 
 
 const calculateTimeLeft = () => {
-  let year = new Date().getFullYear();
-  
+ 
   const difference = +new Date("11/08/2021") - +new Date();
   let timeLeft = {};
 

@@ -3,7 +3,6 @@ import * as React from "react";
 // Ignorar erro de importação de módulo scss pelo ts
 import * as styles from "./gameday.module.scss";
 
-
 import SEO from "../../components/SEO";
 
 const GameDayPage = () => {
@@ -14,8 +13,7 @@ const GameDayPage = () => {
         description="Venha participar SAEC GAMEDAY!"
       />
 
-
-      <main className={styles.main}>GameDay</main>
+      <main>GameDay</main>
     </>
   );
 };

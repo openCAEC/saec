@@ -15,8 +15,8 @@ const IndexPage = () => {
         description="Semana Acadêmica de Engenharia de Computação da Universidade Federal de Santa Catarina"
       />
 
-      <main className={styles.main}>
-        <img className={styles.logo} alt="Logo SAEC" src="/logo.svg" />
+      <main>
+        <img alt="Logo SAEC" src="/logo.svg" />
         <CountdownComponent />
       </main>
     </>

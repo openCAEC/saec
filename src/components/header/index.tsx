@@ -106,7 +106,7 @@ const HeaderComponent = () => {
         open={isDrawerOpen}
         onClose={() => toggleDrawer()}
       >
-        <nav className={styles.mobile}>
+        <nav>
           <div className={styles.logoContainer}>
             <img src="/logo_default.svg" alt="Logo SAEC" />
           </div>
@@ -122,10 +122,7 @@ const HeaderComponent = () => {
                     to={link.path}
                   >
                     <ListItemIcon>{<Icon>{link.icon}</Icon>}</ListItemIcon>
-                    <ListItemText
-                      className={styles.textDrawerLink}
-                      primary={link.name}
-                    />
+                    <ListItemText primary={link.name} />
                   </ListItem>
                 );
               }
