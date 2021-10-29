@@ -17,8 +17,20 @@ const EntrarPage = (props) => {
   );
   const { authUser } = React.useContext(AuthUserContext);
 
+  React.useEffect(() => {
+    const params = new URLSearchParams(props.location.search);
+    const navigatePathUrlParam = params.get("navigate");
+
+    if (navigatePathUrlParam) {
+      const decodedNavigatePathUrlParam =
+        decodeURIComponent(navigatePathUrlParam);
+
+      setNavigatePathUrl(decodedNavigatePathUrlParam);
+    }
+  }, []);
+
   if (authUser) {
-    if (navigatePathUrl) {
+    if (navigatePathUrl != null) {
       navigate(navigatePathUrl);
       return null;
     } else {
@@ -26,15 +38,6 @@ const EntrarPage = (props) => {
       return null;
     }
   }
-
-  React.useEffect(() => {
-    const params = new URLSearchParams(props.location.search);
-    const navigatePathUrlParam = params.get("navigate");
-    const decodedNavigatePathUrlParam =
-      decodeURIComponent(navigatePathUrlParam);
-
-    setNavigatePathUrl(decodedNavigatePathUrlParam);
-  }, []);
 
   function handleClick(provider) {
     console.log("Provider: ", provider);

@@ -89,6 +89,9 @@ button {
   cursor: pointer;
 }
 
+.divider {
+  flex: 1;
+}
 .box {
   display: flex;
   flex-wrap: wrap;

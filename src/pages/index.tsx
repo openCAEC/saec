@@ -5,6 +5,8 @@ import * as styles from "../styles/home.module.scss";
 
 import SEO from "../components/SEO";
 
+import CountdownComponent from "../components/countdown";
+
 const IndexPage = () => {
   return (
     <>
@@ -15,6 +17,7 @@ const IndexPage = () => {
 
       <main className={styles.main}>
         <img className={styles.logo} alt="Logo SAEC" src="/logo.svg" />
+        <CountdownComponent />
       </main>
     </>
   );
