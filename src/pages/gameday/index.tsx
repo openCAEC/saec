@@ -4,6 +4,7 @@ import * as React from "react";
 import * as styles from "./gameday.module.scss";
 
 import SEO from "../../components/SEO";
+import HeaderComponent from "../../components/header";
 
 const GameDayPage = () => {
   return (
@@ -12,8 +13,19 @@ const GameDayPage = () => {
         title="SAEC GAMEDAY | SAEC 2021"
         description="Venha participar SAEC GAMEDAY!"
       />
+      <div className={styles.gameday}>
+        <div className={styles.hero}>
+          <HeaderComponent />
+          <section className={styles.map}>
+            <h1 className={styles.title}>SAEC Game Day</h1>
+            <p>A SAEC de um jeito que você nunca viu!</p>
+          </section>
+        </div>
 
-      <main>GameDay</main>
+        <main className={styles.gameday}>
+          <section>SAEC a maior que nós temos</section>
+        </main>
+      </div>
     </>
   );
 };
