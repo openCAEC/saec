@@ -1,4 +1,3 @@
-import styled from "@emotion/styled/types/base";
 import * as React from "react";
 // @ts-ignore
 // Ignorar erro de importação de módulo scss pelo ts
@@ -11,7 +10,7 @@ const SocialMediaComponent = () => {
       {socialMediaResources.map((socialMediaItem) => {
         return (
           <div key={socialMediaItem.name} className={styles.item}>
-            <a target="_blank" href={socialMediaItem.linkTo}>
+            <a target="_blank" href={socialMediaItem.linkTo} rel="noreferrer">
               <img alt={socialMediaItem.name} src={socialMediaItem.iconPath} />
             </a>
           </div>
