@@ -1,50 +1,27 @@
 {
-  "name": "saec",
+  "name": "saec-2021",
   "version": "1.0.0",
   "private": true,
-  "description": "saec",
+  "description": "SAEC | 2021",
   "author": "Gustavo Simões",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby develop",
+    "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.1",
-    "@emotion/styled": "^11.3.0",
-    "@mui/lab": "^5.0.0-alpha.51",
-    "@mui/material": "^5.0.4",
-    "axios": "^0.24.0",
-    "crypto": "^1.0.1",
-    "dotenv": "^10.0.0",
-    "firebase": "^9.1.3",
-    "gatsby": "^3.13.0",
-    "gatsby-plugin-google-analytics": "^3.13.0",
-    "gatsby-plugin-image": "^1.13.0",
-    "gatsby-plugin-manifest": "^3.13.0",
-    "gatsby-plugin-react-helmet": "^4.13.0",
-    "gatsby-plugin-sass": "^4.13.0",
-    "gatsby-plugin-sharp": "^3.13.0",
-    "gatsby-plugin-sitemap": "^4.9.0",
-    "gatsby-source-filesystem": "^3.13.0",
-    "gatsby-transformer-sharp": "^3.13.0",
-    "install": "^0.13.0",
-    "jsonwebtoken": "^8.5.1",
-    "npm": "^8.1.1",
+    "gatsby": "^4.0.2",
+    "gatsby-plugin-google-analytics": "^4.0.0",
+    "gatsby-plugin-manifest": "^4.0.0",
+    "gatsby-plugin-sass": "^5.0.0",
+    "gatsby-plugin-sitemap": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "react-typing-effect": "^2.0.5",
-    "sass": "^1.38.2"
-  },
-  "devDependencies": {
-    "@types/node": "^16.7.10",
-    "@types/react": "^17.0.19",
-    "@types/react-dom": "^17.0.9"
+    "sass": "^1.43.4"
   }
 }
