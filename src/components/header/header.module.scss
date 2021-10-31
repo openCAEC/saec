@@ -1,0 +1,87 @@
+@media (max-width: 720px) {
+  .desktop {
+    display: none;
+  }
+  .mobileButton {
+    display: block;
+  }
+}
+
+@media (min-width: 720px) {
+  .desktop {
+    display: flex;
+  }
+  .mobileButton {
+    display: none;
+  }
+}
+
+.header {
+  background: var(--aroxo);
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+
+  &.shadow {
+    -webkit-box-shadow: 0px 0px 9px 3px rgb(41, 41, 41, 0.4);
+    box-shadow: 0px 0px 9px 3px rgb(41, 41, 41, 0.4);
+  }
+
+  .mobileButton {
+    padding: 0.4rem;
+  }
+
+  .desktop {
+    padding: 0.8rem;
+    text-align: center;
+
+    align-items: center;
+    justify-content: center;
+
+    .logoContainer {
+      max-width: 6rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .profileImg {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .link {
+      text-decoration: none;
+      color: white;
+      font-weight: 700;
+      padding: 0.5rem 1rem;
+      margin: 0 1.4rem;
+
+      &.signupButton {
+        border-radius: 6px;
+
+        margin: 0.4rem;
+        text-transform: uppercase;
+        color: var(--branco-branco);
+        background: radial-gradient(
+          187.5% 187.5% at 50.29% -54.17%,
+          var(--vermelho-tomate) 0%,
+          var(--amarelo-ovo) 100%
+        );
+        box-shadow: 0px 3px 56px 9px var(--aroxo),
+          -1px -1px 42px -7px var(--vermelho-tomate);
+      }
+    }
+  }
+}
+
+.logoContainer {
+  max-width: 10rem;
+
+  img {
+    width: 100%;
+  }
+}
