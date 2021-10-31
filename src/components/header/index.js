@@ -16,19 +16,11 @@ import {
   ListItemIcon,
   ListItemText,
   IconButton,
-  Menu,
-  MenuItem,
-  Avatar,
 } from "@mui/material";
-import AuthUserContext from "../../contexts/authUser";
 
 const HeaderComponent = () => {
-  const { authUser } = React.useContext(AuthUserContext);
-
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
   const [scrollPosition, setScrollPosition] = React.useState(0);
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
@@ -37,34 +29,10 @@ const HeaderComponent = () => {
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
-
-    console.log("Position: ", position, " State: ", scrollPosition);
   };
 
-  const handleProfileClick = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-  const handleMenuItemClick = (path) => {
-    handleClose();
-    navigate(path);
-    return null;
-  };
-  const handleClose = () => {
-    setAnchorEl(null);
-  };
-
-  function verifyDisableItem(link, device: string) {
-    if (link.disableCase) {
-      return (
-        !link.disableCase.includes(device) &&
-        !(
-          (link.disableCase.includes("isAuth") && authUser) ||
-          (link.disableCase.includes("isNotAuth") && !authUser)
-        )
-      );
-    } else {
-      return true;
-    }
+  function verifyDisableItem(link, device) {
+    return !(link.disableCase && link.disableCase.includes(device));
   }
 
   React.useEffect(() => {
@@ -75,7 +43,7 @@ const HeaderComponent = () => {
     };
   }, []);
 
-  const SignupButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  const SignupButton = styled(Button)(({ theme }) => ({
     color: "white",
     textDecoration: "none",
     margin: "0 1.4rem",
@@ -154,41 +122,9 @@ const HeaderComponent = () => {
           }
         })}
         <div className="divider"></div>
-        {authUser ? (
-          <div>
-            <IconButton
-              id="profile-menu"
-              aria-controls="profile-menu"
-              aria-haspopup="true"
-              aria-expanded={open ? "true" : undefined}
-              onClick={handleProfileClick}
-            >
-              <img
-                className={styles.profileImg}
-                src={authUser.photoURL ?? "/app/profile.svg"}
-              />
-            </IconButton>
-
-            <Menu
-              id="profile-menu"
-              aria-labelledby="demo-positioned-button"
-              anchorEl={anchorEl}
-              open={open}
-              onClose={handleClose}
-            >
-              <MenuItem onClick={() => handleMenuItemClick("/app")}>
-                Minha área
-              </MenuItem>
-              <MenuItem onClick={() => handleMenuItemClick("/logout")}>
-                Sair
-              </MenuItem>
-            </Menu>
-          </div>
-        ) : (
-          <Link to="/inscricao" style={{ textDecoration: "none" }}>
-            <SignupButton>Inscreva-se</SignupButton>
-          </Link>
-        )}
+        <Link to="/inscricao" style={{ textDecoration: "none" }}>
+          <SignupButton>Inscreva-se</SignupButton>
+        </Link>
       </nav>
     </header>
   );

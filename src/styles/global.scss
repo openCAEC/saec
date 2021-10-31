@@ -1,0 +1,122 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #fff;
+
+  --gray-50: #f7f8fa;
+  --gray-100: #e6e8eb;
+  --gray-200: #afb2b1;
+  --gray-500: #808080;
+  --gray-800: #494d4b;
+  --gray-900: #303030;
+
+  --aroxo: #3f00f2;
+  --branco-branco: #fff;
+
+  --vermelho-tomate: #ed3148;
+  --amarelo-ovo: #fbf600;
+  --grafite-chique: #3a3a3d;
+}
+
+/*
+      Conforme a tela vai diminuindo, 
+      a estrutura de font vai diminuindo também.
+      Está em % por uma questão de assessibilidade: 
+      por padrão, o todo o html começa com font-size: 16px,
+      mas, se o user precisa, por n motivos, aumentar
+      a fonte do distema, esse valor muda. Assim, 
+      por questões de assessibilidade, é amplamente indicado 
+      tudo ser o mais relativo possível.
+  */
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%; // 15px (por padrão)
+  }
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 87.5%; // 14px
+  }
+}
+
+body {
+  background: var(--gray-50);
+  color: var(--grafite-chique);
+}
+
+body,
+input,
+textarea,
+button {
+  font: 500 1rem Ubunto, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 600;
+  font-family: "Ubunto", sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+p {
+  font: 500 1rem "Ubunto", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.divider {
+  flex: 1;
+}
+.box {
+  display: flex;
+  flex-wrap: wrap;
+
+  &.x {
+    flex-direction: row;
+  }
+
+  &.y {
+    flex-direction: column;
+  }
+
+  &.center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.space-around {
+    justify-content: space-around;
+  }
+}
+
+.color {
+  &.aroxo {
+    color: var(--aroxo);
+  }
+}
