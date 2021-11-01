@@ -5,7 +5,7 @@ const SEO = ({ title, description }) => (
   <Helmet>
     {/* General tags */}
     <title>{title}</title>
-    <meta charSet="utf-8" />
+
     <meta name="description" content={description} />
     <meta name="image" content={"image"} />
     <link rel="canonical" href={"url"} />
