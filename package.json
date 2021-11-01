@@ -1,22 +1,23 @@
 {
-  "name": "saec",
+  "name": "saec-2021",
   "version": "1.0.0",
   "private": true,
-  "description": "saec",
+  "description": "SAEC | 2021",
   "author": "Gustavo Simões",
   "keywords": [
     "gatsby"
   ],
   "scripts": {
-    "dev": "gatsby develop",
+    "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "@emotion/react": "^11.4.1",
+    "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
+<<<<<<< HEAD
     "@material-ui/core": "^5.0.0-beta.5",
     "firebase": "^9.1.3",
     "gatsby": "^3.13.0",
@@ -29,15 +30,19 @@
     "gatsby-plugin-sitemap": "^4.9.0",
     "gatsby-source-filesystem": "^3.13.0",
     "gatsby-transformer-sharp": "^3.13.0",
+=======
+    "@mui/lab": "^5.0.0-alpha.53",
+    "@mui/material": "^5.0.6",
+    "axios": "^0.24.0",
+    "gatsby": "^4.0.2",
+    "gatsby-plugin-google-analytics": "^4.0.0",
+    "gatsby-plugin-manifest": "^4.0.0",
+    "gatsby-plugin-sass": "^5.0.0",
+    "gatsby-plugin-sitemap": "^5.0.0",
+>>>>>>> deu-a-louca
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-typing-effect": "^2.0.5",
-    "sass": "^1.38.2"
-  },
-  "devDependencies": {
-    "@types/node": "^16.7.10",
-    "@types/react": "^17.0.19",
-    "@types/react-dom": "^17.0.9"
+    "sass": "^1.43.4"
   }
 }

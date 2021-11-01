@@ -1,10 +1,4 @@
-type Social = {
-  name: string;
-  iconPath: string;
-  linkTo: string;
-};
-
-export const socialMediaResources: Array<Social> = [
+export const socialMediaResources = [
   {
     name: "Discord",
     iconPath: "/social/discord.svg",
@@ -38,7 +32,12 @@ export const socialMediaResources: Array<Social> = [
   {
     name: "TikTok",
     iconPath: "/social/tiktok.svg",
-    linkTo: "https://tiktok.com/saecufscara",
+    linkTo: "https://tiktok.com/@saecufscara",
+  },
+  {
+    name: "Twitch",
+    iconPath: "/social/twitch.svg",
+    linkTo: "https://twitch.com/saecufscara",
   },
   {
     name: "Twitter",

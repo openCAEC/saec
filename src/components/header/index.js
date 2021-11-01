@@ -1,14 +1,14 @@
-import { Link } from "gatsby";
+import { Link, navigate } from "gatsby";
 import * as React from "react";
-import Drawer from "@material-ui/core/Drawer";
+import Drawer from "@mui/material/Drawer";
 // @ts-ignore
 // Ignorar erro de importação de módulo scss pelo ts
 import * as styles from "./header.module.scss";
 
 import { links } from "./links";
 
-import { styled } from "@material-ui/core/styles";
-import Button, { ButtonProps } from "@material-ui/core/Button";
+import { styled } from "@mui/material/styles";
+import Button, { ButtonProps } from "@mui/material/Button";
 import {
   Icon,
   List,
@@ -16,16 +16,34 @@ import {
   ListItemIcon,
   ListItemText,
   IconButton,
-} from "@material-ui/core";
+} from "@mui/material";
 
 const HeaderComponent = () => {
   const [isDrawerOpen, setIsDrawerOpen] = React.useState(false);
+  const [scrollPosition, setScrollPosition] = React.useState(0);
 
   const toggleDrawer = () => {
     setIsDrawerOpen(!isDrawerOpen);
   };
 
-  const SignupButton = styled(Button)<ButtonProps>(({ theme }) => ({
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+    setScrollPosition(position);
+  };
+
+  function verifyDisableItem(link, device) {
+    return !(link.disableCase && link.disableCase.includes(device));
+  }
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const SignupButton = styled(Button)(({ theme }) => ({
     color: "white",
     textDecoration: "none",
     margin: "0 1.4rem",
@@ -38,7 +56,9 @@ const HeaderComponent = () => {
   }));
 
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${scrollPosition > 0 ? styles.shadow : ""}`}
+    >
       <div className={styles.mobileButton}>
         <IconButton
           onClick={() => toggleDrawer()}
@@ -54,14 +74,14 @@ const HeaderComponent = () => {
         open={isDrawerOpen}
         onClose={() => toggleDrawer()}
       >
-        <nav className={styles.mobile}>
+        <nav>
           <div className={styles.logoContainer}>
             <img src="/logo_default.svg" alt="Logo SAEC" />
           </div>
 
           <List>
             {links.map((link) => {
-              if (!link.disableCase || !link.disableCase.includes("mobile")) {
+              if (verifyDisableItem(link, "mobile")) {
                 return (
                   <ListItem
                     button
@@ -70,10 +90,7 @@ const HeaderComponent = () => {
                     to={link.path}
                   >
                     <ListItemIcon>{<Icon>{link.icon}</Icon>}</ListItemIcon>
-                    <ListItemText
-                      className={styles.textDrawerLink}
-                      primary={link.name}
-                    />
+                    <ListItemText primary={link.name} />
                   </ListItem>
                 );
               }
@@ -83,8 +100,12 @@ const HeaderComponent = () => {
       </Drawer>
 
       <nav className={styles.desktop}>
+        <div className={styles.logoContainer}>
+          <img src="/logo_white.svg" alt="Logo SAEC" />
+        </div>
+        <div className="divider"></div>
         {links.map((link) => {
-          if (!link.disableCase || !link.disableCase.includes("desktop")) {
+          if (verifyDisableItem(link, "desktop")) {
             return (
               <Link
                 key={link.id}
@@ -100,6 +121,7 @@ const HeaderComponent = () => {
             );
           }
         })}
+        <div className="divider"></div>
         <Link to="/inscricao" style={{ textDecoration: "none" }}>
           <SignupButton>Inscreva-se</SignupButton>
         </Link>

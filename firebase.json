@@ -12,8 +12,11 @@
         "destination": "/index.html"
       }
     ]
+<<<<<<< HEAD
   },
   "remoteconfig": {
     "template": "remoteconfig.template.json"
+=======
+>>>>>>> deu-a-louca
   }
 }

@@ -1,0 +1,57 @@
+.gameday {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    font-family: "Press Start 2P", sans-serif;
+  }
+
+  .hero {
+    height: 100vh;
+    position: relative;
+
+    .title {
+      font-size: 4rem;
+      color: var(--branco-branco);
+      margin: 1rem 2rem;
+      z-index: 100;
+    }
+
+    .map {
+      min-height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+
+      width: 100%;
+      height: 100%;
+
+      text-align: center;
+
+      background-color: #76c6f5;
+      background-image: url("/gameday/map.gif"), url("/gameday/cloud.gif");
+      background-repeat: repeat-x;
+      background-size: auto 80%;
+      background-position: left bottom;
+      animation: map-animation 80s linear infinite;
+    }
+  }
+}
+
+@keyframes map-animation {
+  0% {
+    background-position: left bottom;
+  }
+  100% {
+    background-position: right bottom;
+  }
+}

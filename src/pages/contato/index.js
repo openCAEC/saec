@@ -5,6 +5,7 @@ import * as styles from "./contato.module.scss";
 
 import SEO from "../../components/SEO";
 import SocialMediaComponent from "../../components/socialMedia";
+import HeaderComponent from "../../components/header";
 
 const LinkIcon = () => (
   <svg viewBox="0 0 24 24">
@@ -19,6 +20,7 @@ const ContatoPage = () => {
         title="Contato | SAEC 2021"
         description="Entre em contato com a equipe da SAEC UFSC 2021"
       />
+      <HeaderComponent />
 
       <section className={styles.contactHeader}>
         <h1>Vamos conversar?</h1>
@@ -32,7 +34,11 @@ const ContatoPage = () => {
               Tem alguma dúvida podemos te ajudar pelo nosso canal de e-mail.
             </p>
             <div className={styles.link}>
-              <a target="_blank" href="mailto:saecufscara@gmail.com">
+              <a
+                target="_blank"
+                href="mailto:saecufscara@gmail.com"
+                rel="noreferrer"
+              >
                 saecufscara@gmail.com
                 <LinkIcon />
               </a>
@@ -50,6 +56,7 @@ const ContatoPage = () => {
                 className={styles.link}
                 target="_blank"
                 href="https://api.whatsapp.com/send?phone=554833633522&text=Ol%C3%A1%20equipe%20SAEC%2C%20tudo%20bem%3F"
+                rel="noreferrer"
               >
                 +55 (19) 3363-3522
                 <LinkIcon />
@@ -63,7 +70,12 @@ const ContatoPage = () => {
               equipe de Staffs da SAEC nos canais de suporte!{" "}
             </p>
             <div className={styles.link}>
-              <a className={styles.link} target="_blank" href="">
+              <a
+                className={styles.link}
+                target="_blank"
+                href="/discord"
+                rel="noreferrer"
+              >
                 Comunidade no Discord
                 <LinkIcon />
               </a>
@@ -71,10 +83,10 @@ const ContatoPage = () => {
           </div>
         </div>
 
-        <hr className={styles.divider}></hr>
+        <hr></hr>
 
-        <div className={styles.itemUno}>
-          <div className={styles.content}>
+        <div className={styles.boxItem}>
+          <div>
             <h3>
               Siga <span className="color aroxo">@saecufscara</span> nas redes!
             </h3>
@@ -86,10 +98,10 @@ const ContatoPage = () => {
           </div>
         </div>
 
-        <hr className={styles.divider}></hr>
+        <hr></hr>
 
-        <div className={styles.itemUno}>
-          <div className={styles.text}>
+        <div className={styles.boxItem}>
+          <div>
             <h3>Canal de denúncia</h3>
             <p>
               Viu alguma atitude negativa durante a SAEC ou algo que aconteceu
@@ -101,6 +113,7 @@ const ContatoPage = () => {
                 className={styles.link}
                 target="_blank"
                 href="https://forms.gle/Q44sNt3AFf9dYQZ26"
+                rel="noreferrer"
               >
                 Formulário de denúncias
                 <LinkIcon />
@@ -109,12 +122,12 @@ const ContatoPage = () => {
           </div>
         </div>
 
-        <hr className={styles.divider}></hr>
+        <hr></hr>
 
-        <div className={styles.itemUno}>
-          <div className={styles.text}>
+        <div className={styles.boxItem}>
+          <div>
             <h3>Críticas e sugestões</h3>
-            <p className={styles.text}>
+            <p>
               Deseja fazer algum comentário para a equipe da SAEC ou passar
               algum feedback? Ou então contar para nós um pouco da sua
               experiência no evento? Quem sabe apenas dar um biscoito pra equipe
@@ -125,6 +138,7 @@ const ContatoPage = () => {
                 className={styles.link}
                 target="_blank"
                 href="https://forms.gle/ALKrmNNX4fYZVMfn9"
+                rel="noreferrer"
               >
                 Formulário críticas e sugestões
                 <LinkIcon />

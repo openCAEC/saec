@@ -4,8 +4,13 @@ import * as React from "react";
 import * as styles from "../styles/home.module.scss";
 
 import SEO from "../components/SEO";
+import HeaderComponent from "../components/header";
+import { CircularProgress } from "@mui/material";
 
 const IndexPage = () => {
+  React.useEffect(() => {
+    window.location.replace("https://www.sympla.com.br/saec-ufsc__1398071");
+  }, []);
   return (
     <>
       <SEO
@@ -14,7 +19,7 @@ const IndexPage = () => {
       />
 
       <main className={styles.main}>
-        <img className={styles.logo} alt="Logo SAEC" src="/logo.svg" />
+        <CircularProgress />
       </main>
     </>
   );

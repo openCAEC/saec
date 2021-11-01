@@ -1,0 +1,114 @@
+.main {
+  width: 100%;
+  .ticket {
+    .conection {
+      display: flex;
+      flex-direction: row;
+      gap: 4rem;
+      justify-content: center;
+      align-items: center;
+
+      .imgContainer {
+        width: 4rem;
+        height: 4rem;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: var(--branco-branco);
+
+        img {
+          width: 100%;
+          border-radius: 100%;
+        }
+      }
+      .dotflashing {
+        position: relative;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--aroxo);
+        color: var(--aroxo);
+        animation: dotFlashing 1s infinite linear alternate;
+        animation-delay: 0.5s;
+      }
+
+      .dotflashing::before,
+      .dotflashing::after {
+        content: "";
+        display: inline-block;
+        position: absolute;
+        top: 0;
+      }
+
+      .dotflashing::before {
+        left: -15px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--aroxo);
+        color: var(--aroxo);
+        animation: dotFlashing 1s infinite alternate;
+        animation-delay: 0s;
+      }
+
+      .dotflashing::after {
+        left: 15px;
+        width: 10px;
+        height: 10px;
+        border-radius: 5px;
+        background-color: var(--aroxo);
+        color: var(--aroxo);
+        animation: dotFlashing 1s infinite alternate;
+        animation-delay: 1s;
+      }
+
+      @keyframes dotFlashing {
+        0% {
+          background-color: var(--aroxo);
+        }
+        50%,
+        100% {
+          background-color: #ebe6ff;
+        }
+      }
+    }
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 4rem 0;
+
+    width: 100%;
+    height: 100%;
+
+    form {
+      width: 100%;
+      max-width: 40rem;
+      margin: 3rem 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      h2 {
+        margin: 1rem;
+      }
+    }
+
+    img {
+      width: 12rem;
+    }
+
+    .input {
+      width: 100%;
+      margin: 1.5rem 0;
+    }
+
+    button {
+      margin: 2rem;
+      align-self: flex-end;
+    }
+  }
+}
